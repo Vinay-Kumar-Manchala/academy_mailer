@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-print("hi from ubuntu")
+# print("hi from ubuntu")
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
