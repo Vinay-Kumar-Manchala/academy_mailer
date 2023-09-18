@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# print("hi from ubuntu")
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -13,12 +12,8 @@ class SmtpMailer:
         try:
             # Create a secure SSL context
             context=ssl.create_default_context()
-            print(context)
             mailServer = smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context)
-            print("mailserver")
             mailServer.login("optimusprime7675@gmail.com", "pxgmpjecnereptya")
-            #mailServer = smtplib.SMTP("relay.nic.in", 25)
-            # mailServer.login("prana.cpcb@gov.in", "Prana@987")
             return mailServer
         except Exception as e:
             print("exception in connector")
@@ -62,5 +57,4 @@ class SmtpMailer:
 
 all_mail = ["vinaykumar.manchala@knowledgelens.com", "chakri.nugala@knowledgelens.com", "shabarish.bhadrisetty@knowledgelens.com", "vamsikrishna.grandhi@knowledgelens.com", "harish.raju@knowledgelens.com", "gnana.prakash@knowledgelens.com"]
 
-if True:
-    SmtpMailer().send_email_to_user(all_mail, "Reminder Msg from Python Academy", f"Academy rules ni patinchadi, time ipdu 7:00 PM, laptop close chesi PG ki pondi bois :) \n\n Pandagow,\nItlu : Python Academy.")
+SmtpMailer().send_email_to_user(all_mail, "Reminder Msg from Python Academy", f"Academy rules ni patinchadi, Time to go... :) \n\n Pandagow,\nItlu : Python Academy.")
